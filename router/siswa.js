@@ -7,10 +7,10 @@ router.get('/siswa', usercontroller.index)
 
 router.get('/siswa/:id', usercontroller.show)
 
-  router.post('/add', usercontroller.store)
+  router.post('/siswa', usercontroller.store)
 
-  router.put('/update/:id', usercontroller.update)
+  router.put('/siswa/:id', usercontroller.update)
 
-  router.delete('/delete/:id', usercontroller.delete)
+  router.delete('/siswa/:id', usercontroller.delete)
 
   module.exports = router

@@ -48,16 +48,18 @@ module.exports = {
               message: "Data berhasil ditambahkan"
             })
         } catch (error) {
-            res.status(400).json({sucess: false})
+            res.status(400).json({sucess: false, error: error.message});
         }
       },
       update: async (req, res) => {
         try {
+          console.log("tes")
             const user = await User.findByIdAndUpdate(req.params.id, req.body, {
                 new: true,
                 runValidators: true
             })
-            res.json ({
+
+            res.json({
               status: true,
               data: user,
               method: req.method,
@@ -65,7 +67,9 @@ module.exports = {
               message: "Data berhasil diubah"
             })
         } catch (error) {
+          console.log(err.message)
             res.status(400).json({sucess: false})
+
         }
       },
       delete: async (req, res) => {
